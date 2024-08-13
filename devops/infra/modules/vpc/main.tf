@@ -54,19 +54,19 @@ resource "aws_security_group" "security_group" {
     name = "ecs-ecr-sg"
     vpc_id = aws_vpc.main.id
 
-    ingress = {
+    ingress = [{
         from_port = 0
         to_port = 0
         protocol = -1
         self = "false"
         cidr_block = ["0.0.0.0/0"]
         description = "any"
-    }  
+    }]  
 
-    egress = {
+    egress = [{
         from_port = 0
         to_port = 0
         protocol = "-1"
         cidr_block = ["0.0.0.0/0"]
-    }
+    }]
 }
