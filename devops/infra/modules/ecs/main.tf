@@ -10,8 +10,8 @@ resource "aws_ecs_service" "Fargate-service" {
     launch_type = "FARGATE"
 
     network_configuration {
-        subnets = data.aws_subnets.default.ids
-        security_groups = [data.aws_security_group.default.id]
+        subnets         = [aws_subnet.subnet1.id, aws_subnet.subnet2.id]
+        security_groups = [aws_security_group.security_group.id]
         assign_public_ip = true
     }
 }
