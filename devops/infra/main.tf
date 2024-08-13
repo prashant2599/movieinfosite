@@ -14,5 +14,10 @@ module "awsecrcreate" {
 module "aws_ecs_cluster" {
   source = "./modules/ecs"
   aws_ecs_cluster_name = "movieinfosite"
+}
+
+
+module "vpc" {
+  source = "./modules/vpc"
   
 }
