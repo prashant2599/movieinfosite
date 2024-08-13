@@ -11,13 +11,6 @@ module "awsecrcreate" {
   aws_ecr_image_scanning = true
 }
 
-module "aws_ecs_cluster" {
-  source = "./modules/ecs"
-  aws_ecs_cluster_name = "movieinfosite"
-}
-
-
 module "vpc" {
   source = "./modules/vpc"
-  
 }
