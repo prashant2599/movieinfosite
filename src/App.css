@@ -1,0 +1,21 @@
+body {
+    margin: auto;
+    padding: 0;
+    text-decoration: none;
+    background-color: rgb(226, 209, 209);
+}
+
+.container{
+    width: 100%;
+    margin: 1rem;
+}
+.grid{
+    display: grid;
+    margin-left: 10px;
+    grid-template-columns: repeat(4,1fr);
+    
+    grid-gap: 15px;
+    justify-content: center;
+    
+    
+}
