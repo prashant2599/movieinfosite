@@ -130,7 +130,7 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -t prashant99/movieinfositehelm:${{ github.run_number }} .
+          docker build -t movieinfositehelm:${{ github.run_number }} .
       - name: Tag Docker Image
         run: |
           docker tag movieinfositehelm:${{ github.run_number }} prashant99/movieinfositehelm:${{ github.run_number }}
