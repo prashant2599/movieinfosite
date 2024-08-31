@@ -96,21 +96,46 @@
 # #           wait-for-service-stability: true
 
 
-name: Python CI/CD-HELM
+name: Build and Push Docker Image
 
 on:
   push:
     branches:
-      - main
-  # pull_request:
-  #   branches:
-  #     - main
+      - main  # Change to your default branch if different
 
 jobs:
-  checkout-and-run:
+  build:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Checkout the repository
       - name: Checkout code
         uses: actions/checkout@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Cache Docker layers
+        uses: actions/cache@v3
+        with:
+          path: /tmp/.buildx-cache
+          key: ${{ runner.os }}-buildx-${{ github.sha }}
+          restore-keys: |
+            ${{ runner.os }}-buildx-
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: prashant99
+          password: Jwv4&dFxBiP!S+A
+
+      - name: Build Docker image
+        run: |
+          docker build -t prashant99/movieinfositehelm:${{ github.run_number }} .
+      - name: Tag Docker Image
+        run: |
+          docker tag movieinfosite:{{ github.run_number }} prashant99/movieinfositehelm:${{ github.run_number }}
+      - name: Push Docker image
+        run: |
+          docker push prashant99/movieinfositehelm:${{ github.run_number }}
+
+          

@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: movieinfosite
+spec:
+  selector:
+    matchLabels:
+      app: movieinfosite
+  template:
+    metadata:
+      labels:
+        app: movieinfosite
+    spec:
+      containers:
+      - name: movieinfosite
+        image: prashant99/movieinfositehelm:v1
+        ports:
+        - containerPort: 3000
