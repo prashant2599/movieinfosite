@@ -7,7 +7,7 @@ This guide demonstrates how to deploy an application on Minikube using Kubernete
 - **Minikube** installed ([Installation Guide](https://minikube.sigs.k8s.io/docs/start/))
 - **kubectl** installed ([Installation Guide](https://kubernetes.io/docs/tasks/tools/install-kubectl/))
 
-
+For detailed step-by-step instructions and explanations, please refer to my accompanying blog post.
 
 # API URL
 API_URL="https://api.themoviedb.org/3/movie/popular?api_key=b80142a02dfb0192723eeffdfdd9d7a5"
