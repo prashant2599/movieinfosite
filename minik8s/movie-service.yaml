@@ -3,10 +3,10 @@ kind: Service
 metadata:
   name: movieinfosite
 spec:
-  # type: NodePort
+  type: LoadBalancer
   selector:
     app: movieinfosite
   ports:
-    - port: 3000
-      targetPort: 3000
-      # nodePort: 32031 
+  - port: 80
+    targetPort: 3000
+

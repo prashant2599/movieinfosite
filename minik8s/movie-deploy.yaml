@@ -13,6 +13,10 @@ spec:
     spec:
       containers:
       - name: movieinfosite
-        image: prashant99/movieinfositehelm:v1
+        image: prashant99/movieinfosite:v1.2
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "100m"
         ports:
         - containerPort: 3000
