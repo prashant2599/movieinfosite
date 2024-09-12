@@ -3,7 +3,6 @@ kind: Service
 metadata:
   name: movieinfosite
 spec:
-  type: LoadBalancer
   selector:
     app: movieinfosite
   ports:
