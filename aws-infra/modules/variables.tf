@@ -1,0 +1,9 @@
+variable "aws_cidr" {}
+variable "aws_vpc_tag" {}
+variable "aws_subnet_cidr" {}
+variable "aws_available_zone" {}
+variable "aws_subnet_tags" {}
+variable "aws_sg_tag" {}
+variable "aws_instance_image" {}
+variable "aws_instance_type" {}
+variable "aws_instance_tag" {}
