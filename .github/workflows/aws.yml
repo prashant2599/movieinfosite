@@ -28,11 +28,14 @@ jobs:
 
       - name: Terraform Init
         run: terraform init
+        working-directory: infra/aws-infra
         
 
 
       - name: Terraform Plan
         run: terraform plan -out=plan.out
+        working-directory: infra/aws-infra
+
         
 
  
@@ -40,6 +43,8 @@ jobs:
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         run: terraform apply -auto-approve plan.out
+        working-directory: infra/aws-infra
+
         
 #       - name: Terraform Destroy
 #         if: github.event_name == 'workflow_dispatch' && github.event.inputs.destroy == 'true'
